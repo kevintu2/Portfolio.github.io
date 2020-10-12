@@ -1,0 +1,450 @@
+/* global */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+}
+
+.clearfix::after{
+    content:"";
+    clear:both;
+    display:table;
+}
+
+
+h1{
+    font-size: 40px;
+    font-weight: 400;
+    color: #17191A;
+}
+h2{
+    font-size: 35px;
+    font-weight: 400;
+    color: #17191A;
+}
+h6{
+    font-size: 40px;
+    font-weight: 400;
+    color: #17191A;
+    animation: type 2s steps(8);
+    overflow:hidden;
+    white-space:nowrap;
+    width:7ch;
+}
+
+@keyframes type{
+    0%{
+        width:0ch;
+        border-right: 4px solid black;
+    }
+    99%{
+        width:7ch;
+        border-right: 4px solid black;
+    }
+    100%{
+        border-right:white;
+    }
+}
+
+h3{
+    font-size: 20px;
+    color:white;
+}
+h5{
+    font-size: 20px;
+    margin-top:10px;
+    color: #17191A;
+}
+p{
+    color:#8f9EA5;
+    opacity: 0.8;
+    font-weight: 100;
+    margin-top: 10px;
+    font-size: 20px;
+}
+/* navbar */
+nav{
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    
+}
+.logo{
+    text-transform:uppercase;
+    letter-spacing: 5px;
+    font-size:20px;
+}
+.logo a{
+    text-decoration: none;
+    color:black;
+}
+.navlinks{
+    display:flex;
+    justify-content: space-around;
+    width:28%;
+    
+}
+.navlinks a{
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight:bold;
+    font-size:14px;
+    color:black;
+    
+}
+.navlinks li{
+    list-style: none;
+    transition: .5s;
+}
+.navlinks li:hover{
+    background: whitesmoke;
+}
+.burger{
+    display:none;
+    cursor: pointer;
+}
+.burger div{
+    width:25px;
+    height:3px;
+    margin: 5px;
+    background-color: black;
+    transition: all 0.3s ease;
+}
+@media screen and (max-width:1024px){
+   .navlinks{
+       width:50%;
+   }
+}
+
+@media screen and (max-width:768px){
+    body{
+        overflow-x: hidden;
+    }
+    .navlinks{
+        position:absolute;
+        right:0px;
+        height:92vh;
+        top:8vh;
+        background-color:whitesmoke;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        width:50%;
+        transform: translateX(100%);
+        transition:transform 0.2s ease-in;
+    }
+
+    .navlinks li{
+        opacity: 0;
+    }
+    .burger{
+        display:block;
+    }
+    .projecttext{
+        font-size:20px;
+    }
+    .viewtext{
+        font-size: 15px;
+    }
+    
+    .wimage{
+        position: absolute;
+        bottom:0;
+        right:-15%;
+        width:50px;
+        height: auto;
+    }
+    .project2text{
+        font-size: 20px;
+    }
+    .view2text{
+        font-size:15px;
+    }
+    .w2image{
+        width: 50px;
+        height:auto;
+        margin-left:400%;
+    }
+    .w3image{
+        position: absolute;
+        bottom:0;
+        right:-15%;
+        width:60px;
+        height: auto;
+    }
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+
+@keyframes navlinkfade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+
+    }
+}
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+
+
+
+
+/* landingpage */
+
+.landing{
+    height:100vh;
+    position: relative;
+    width: 60%;
+    margin: auto;
+}
+.landingwrapper{
+    display: flex;
+    justify-content: space-between;
+    padding-top:65px;
+
+}
+.landingL {
+    transition: all 1.5s ease;
+    padding-top:4em;
+}
+.scroll {
+    position: absolute;
+    bottom: -60px;
+    left:0;
+    right:0;
+    margin: auto;
+    animation: bounce .9s infinite;
+}
+@keyframes bounce{
+    10%{
+        transform: translateY(10px);
+    }
+  
+}
+
+
+
+/* skills */
+.Resume{
+    margin-top:2em;
+    margin-bottom: 10em;
+    text-align: center;
+}
+.resumebutton{
+    margin-top:3em;
+}
+.skillslabel{
+    color:black;
+    font-weight: bold;
+
+}
+.skilltitle{
+    color:#027BFF;
+    font-weight: bold;
+}
+
+
+/* project1*/
+.Project{
+    margin-top: 14em;
+    text-align:center;
+}
+.work{
+    width: 100%;
+    position: relative;
+    margin-bottom: 20em;
+}
+.work > .worktext{
+    padding-left:15vw;
+    position: absolute;
+    padding-top:5vh;
+}
+
+.work > .worktext > .underline{
+    display: block;
+    background-color: #027BFF;
+    height:3px;
+    width:61px;
+    margin-top: 5px;
+}
+
+.work > .workimage{
+    width: 70%;
+    float: right;
+    height: 80%
+}
+/* java logo */
+.work ul{
+    position: absolute;
+    bottom:0;
+    right:57%;
+    width:100px;
+    height: auto;
+}
+.work ul li{
+    margin-top:20px;
+}
+
+
+/* project2 */
+.work2{
+    width: 100%;
+    position: relative;
+    margin-bottom: 20em;
+}
+.work2 > .worktext{
+    position: absolute;
+    right: 0;
+    text-align: right;
+    padding-right:15vw;
+    padding-top:5vh;
+}
+
+.work2 > .worktext > .underline{
+    display: block;
+    background-color: #027BFF;
+    height:3px;
+    width:61px;
+    margin-top: 5px;
+    float:right;
+}
+
+.work2 > .work2image{
+    width: 70%;
+    float: left;
+    height: 80%
+}
+
+.work2 ul{
+    display: flex;
+    position: absolute;
+    bottom:0;
+    right:34%;
+    width:400px;
+    height: auto;
+}
+.work2 ul li{
+    padding-right: 20px;
+    margin-top:20px;
+}
+/* project3 */
+
+.work3{
+    width: 100%;
+    position: relative;
+    margin-bottom: 20em;
+}
+.work3 > .work3text{
+    
+    padding-left:15vw;
+    position: absolute;
+    padding-top:5vh;
+}
+
+.work3 > .work3text > .underline{
+    display: block;
+    background-color: #027BFF;
+    height:3px;
+    width:61px;
+    margin-top: 5px;
+}
+
+.work3 > .work3image{
+    width: 70%;
+    float: right;
+    height: 80%
+}
+/* processing logo */
+.work3 ul{
+    position: absolute;
+    bottom:0;
+    right:55%;
+    width:130px;
+    height: auto;
+}
+.work3 ul li{
+    margin-top:20px;
+}
+/* connect */
+.connect{
+    text-align: center;
+}
+.connect > .underline{
+    display: block;
+    background-color: #027BFF;
+    height:3px;
+    width:100px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+.footericons{
+    display:flex;
+    justify-content: center;
+}
+.footericons li{
+    padding-top: 10px;
+    padding-right:20px;
+}
+
+/* footer */
+
+
+.footer{
+    text-align:center;
+    background-color: black;
+    background-size: 320px;
+
+}
+
+.bootlegtitle{
+    text-align: center;
+    margin-top: 5%;
+}
+.recipeimage{
+    height: auto;
+    width: 60%;
+}
+.demo{
+    height:auto;
+    width: 43%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
